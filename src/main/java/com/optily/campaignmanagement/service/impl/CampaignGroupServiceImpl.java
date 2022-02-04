@@ -6,9 +6,12 @@ import com.optily.campaignmanagement.repository.CampaignGroupRepository;
 import com.optily.campaignmanagement.service.CampaignGroupService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Slice;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
@@ -27,8 +30,20 @@ public class CampaignGroupServiceImpl implements CampaignGroupService {
         return campaignGroupDto;
     }
 
+
+
     @Override
-    public List<CampaignGroupDto> getAll() {
+    public Slice<CampaignGroupDto> findAllPageable(Pageable pageable) {
         return null;
+    }
+
+    @Override
+    public List<CampaignGroupDto> findAll() {
+
+        List<CampaignGroupDto> all = campaignGroupRepository.findAll()
+                .stream()
+                .map(campaignGroup -> modelMapper.map(campaignGroup,  CampaignGroupDto.class))
+                .collect(Collectors.toList());
+        return all ;
     }
 }
