@@ -1,8 +1,6 @@
 package com.optily.campaignmanagement;
 
-import com.optily.campaignmanagement.dto.CampaignGroupDto;
 import com.optily.campaignmanagement.service.CampaignGroupService;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,16 +18,9 @@ public class CampaignManagementApplication {
 
 
 
-   static CampaignGroupService campaignGroupService;
 
     public static void main(String[] args) {
         SpringApplication.run(CampaignManagementApplication.class, args);
-
-        CampaignGroupDto campaignGroupDto= new CampaignGroupDto();
-        campaignGroupDto.setName("Group1");
-       // campaignGroupDto.setName("Group2");
-       // campaignGroupDto.setName("Group3");
-        campaignGroupService.save(campaignGroupDto);
 
 
         List<List<String>> records = new ArrayList<>();
