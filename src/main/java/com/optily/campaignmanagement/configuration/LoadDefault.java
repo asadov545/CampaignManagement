@@ -16,6 +16,7 @@ public class LoadDefault {
 
 
 
+
     public void defaultDataSave() {
         CampaignGroupDto campaignGroupDto = new CampaignGroupDto();
         campaignGroupDto.setName("Group1");
