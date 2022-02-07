@@ -32,10 +32,7 @@ public class CampaignGroupServiceImpl implements CampaignGroupService {
 
 
 
-    @Override
-    public Slice<CampaignGroupDto> findAllPageable(Pageable pageable) {
-        return null;
-    }
+
 
     @Override
     public List<CampaignGroupDto> findAll() {

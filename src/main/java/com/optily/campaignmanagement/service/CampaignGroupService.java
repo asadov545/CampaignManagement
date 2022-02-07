@@ -10,6 +10,6 @@ import java.util.List;
 public interface CampaignGroupService {
     CampaignGroupDto save(CampaignGroupDto campaignGroupDto);
     List<CampaignGroupDto> findAll();
-    Slice<CampaignGroupDto> findAllPageable(Pageable pageable);
+
 
 }

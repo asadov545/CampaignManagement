@@ -23,15 +23,16 @@ public class Campaign {
     @ManyToOne
     @JoinColumn(name = "campaigngroup_id")
     private CampaignGroup campaignGroup;
-
+    @Column
     private String name;
+    @Column
     private double budget;
+    @Column
     private double impressions;
+    @Column
     private double revenue;
 
 
-    @OneToMany
-    @JoinColumn(name = "campaign_recommendation_id")
-    private List<Recommendation> recommendationList;
+
 
 }

@@ -9,6 +9,10 @@ import com.optily.campaignmanagement.service.CampaignService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @RequiredArgsConstructor
 @Service
 public class CampaignServiceImpl implements CampaignService {
@@ -17,9 +21,14 @@ public class CampaignServiceImpl implements CampaignService {
 
     private final ModelMapper modelMapper;
     private final CampaignRepository campaignRepository;
-    public CampaignDto getByCampaignGroupId(long id) {
-        Campaign campaign = campaignRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException());
-        return modelMapper.map(campaign, CampaignDto.class);
+
+
+    @Override
+    public List<CampaignDto> getCampainsByCampaignGroupId(long cam_group_id) {
+        List<CampaignDto> all = campaignRepository.findByCampaignGroupId(cam_group_id)
+                .stream()
+                .map(campaign -> modelMapper.map(campaign,  CampaignDto.class))
+                .collect(Collectors.toList());
+        return all ;
     }
 }

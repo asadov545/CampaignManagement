@@ -23,11 +23,5 @@ public class CampaignGroup {
     private String name;
 
 
-    @OneToMany
-    @JoinColumn(name = "campaigngroup_campaign_id")
-    private List<Campaign> campaignList;
 
-    @OneToMany
-    @JoinColumn(name = "campaigngroup_optimisation_id")
-    private List<Optimisation> optimisationList;
 }

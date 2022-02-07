@@ -25,7 +25,5 @@ public class Optimisation {
 
     private Short optimisationStatus;
 
-    @OneToMany
-    @JoinColumn(name = "optimisation_recommendation_id")
-    private List<Recommendation> recommendationList;
+
 }

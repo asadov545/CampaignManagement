@@ -19,13 +19,10 @@ public class CampaignGroupController {
 
     private final CampaignGroupService campaignGroupService;
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<CampaignGroupDto>> getAllCampaignGroup() {
         return ResponseEntity.ok(campaignGroupService.findAll());
     }
 
-    @RequestMapping(value = "/pageable", method = RequestMethod.GET)
-    public ResponseEntity<Slice<CampaignGroupDto>> getAll(Pageable pageable) {
-        return ResponseEntity.ok(campaignGroupService.findAllPageable(pageable));
-    }
+
 }

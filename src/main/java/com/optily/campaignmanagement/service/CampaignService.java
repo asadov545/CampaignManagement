@@ -3,9 +3,11 @@ package com.optily.campaignmanagement.service;
 import com.optily.campaignmanagement.dto.CampaignDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface CampaignService {
 
-    CampaignDto getByCampaignGroupId(long id);
+    List<CampaignDto> getCampainsByCampaignGroupId(long id);
 
 }
