@@ -8,6 +8,6 @@ import java.util.List;
 @Service
 public interface CampaignService {
 
-    List<CampaignDto> getCampainsByCampaignGroupId(long id);
+    List<CampaignDto> getCampainsByCampaignGroupId(long campaignGroupId);
 
 }

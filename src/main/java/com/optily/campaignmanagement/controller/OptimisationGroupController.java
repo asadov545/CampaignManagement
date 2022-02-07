@@ -16,10 +16,13 @@ import java.util.List;
 public class OptimisationGroupController {
 
     private final  OptimisationService optimisationService;
+
     @RequestMapping(value = "/optsbycampaigngroupid", method = RequestMethod.GET)
-    public ResponseEntity<List<OptimisationDto>> getAllCampaignsByCampaignGroupId(@RequestParam("campaigngroupid") long campaigngroupid){
+    public ResponseEntity<List<OptimisationDto>> getRecommendationsByOptimisationId(@RequestParam("campaigngroupid") long campaigngroupid){
         return ResponseEntity.ok(optimisationService.getOptimisationsByCampaignGroupId(campaigngroupid));
 
     }
+
+
 
 }

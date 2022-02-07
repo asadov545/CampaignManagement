@@ -24,8 +24,8 @@ public class CampaignServiceImpl implements CampaignService {
 
 
     @Override
-    public List<CampaignDto> getCampainsByCampaignGroupId(long cam_group_id) {
-        List<CampaignDto> all = campaignRepository.findByCampaignGroupId(cam_group_id)
+    public List<CampaignDto> getCampainsByCampaignGroupId(long campaignGroupId) {
+        List<CampaignDto> all = campaignRepository.findByCampaignGroupId(campaignGroupId)
                 .stream()
                 .map(campaign -> modelMapper.map(campaign,  CampaignDto.class))
                 .collect(Collectors.toList());

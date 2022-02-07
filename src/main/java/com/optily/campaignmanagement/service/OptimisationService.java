@@ -9,4 +9,6 @@ import java.util.List;
 @Service
 public interface OptimisationService {
     List<OptimisationDto> getOptimisationsByCampaignGroupId(long cam_group_id);
+    OptimisationDto save(OptimisationDto optimisationDto);
+    void updateOldOptimisations(long cam_group_id);
 }
