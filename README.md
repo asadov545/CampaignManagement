@@ -1,5 +1,7 @@
 "# CampaignManagement"
 
+Hello, Just open intellij and run it. I use mysql in cloud.
+
 Example 
 Get 
 http://localhost:8081/api/campaigngroup/all
